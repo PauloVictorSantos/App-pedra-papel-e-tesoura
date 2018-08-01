@@ -9,37 +9,39 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  Button
 } from 'react-native';
 
+
 class MeuComponente extends Component{
-
-constructor(props)
-{
-  super(props);
-  this.state ={texto:'Testando'}
-}
-
-render(){
-  return(
-    <View style={styles.container}>
-      <Text>{this.props.teste}</Text>
-    </View>
-  );
-}
-alteraTexto() {
-  this.setState({texto:'Outra coisa'})
-}
-
+  render(){
+    return(
+      <View style={styles.container}>
+        <Text>{this.props.teste}</Text>
+      </View>
+    );
+  }
 }
 
 
 export default class app3 extends Component {
+
+  constructor(props)
+  {
+    super(props);
+    this.state ={texto:'Testando'};
+  }
+  
+    alteraTexto() {
+      this.setState({texto:'Outra coisa'});
+    }
+
   render() {
     return (
       <View>
         <MeuComponente teste={this.state.texto}></MeuComponente>
-          <button onPress={ ()=>alteraTexto} title="Botão"  />
+          <Button onPress={()=>{this.alteraTexto()}} title="Botão"  />
         </View>
     );
   }
