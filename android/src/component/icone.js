@@ -1,43 +1,47 @@
-import React, {Component} from 'react';
-import {View, Text, Image, StyleSheet}  from 'react-native';
+import React, { Component } from 'react';
+import { View, Text, Image, StyleSheet } from 'react-native';
 
-class Icone extends Component{
-    render(){ 
-        if(this.props.escolha =='pedra'){
+const imgPedra = require('../../img/pedra.png');
+const imgPapel = require('../../img/papel.png');
+const imgTesoura = require('../../img/tesoura.png');
+
+class Icone extends Component {
+    render() {
+        if (this.props.escolha == 'pedra') {
             return (
-              <View style={styles.icone}>
-              <Text>{this.props.jogador}</Text>
-                <Image source={require('../../img/pedra.png')} />
-              </View>
-              );
-        }else if(this.props.escolha =='papel'){
-          return (
-            <View style={styles.icone}>
-            <Text style={styles.txtJogador} >{this.props.jogador}</Text>
-              <Image source={require('../../img/papel.png')} />
-            </View>
+                <View style={styles.icone}>
+                    <Text>{this.props.jogador}</Text>
+                    <Image source={imgPedra} />
+                </View>
             );
-        }else if(this.props.escolha =='tesoura'){
-          return (
-            <View style={styles.icone}>
-            <Text style={styles.txtJogador}>{this.props.jogador}</Text>
-              <Image source={require('../../img/tesoura.png')} />
-            </View>
+        } else if (this.props.escolha == 'papel') {
+            return (
+                <View style={styles.icone}>
+                    <Text style={styles.txtJogador} >{this.props.jogador}</Text>
+                    <Image source={imgPapel} />
+                </View>
             );
-        }else{
-          return false;
+        } else if (this.props.escolha == 'tesoura') {
+            return (
+                <View style={styles.icone}>
+                    <Text style={styles.txtJogador}>{this.props.jogador}</Text>
+                    <Image source={imgTesoura} />
+                </View>
+            );
         }
+        return false;
+
     }
-  }
+}
 
 const styles = StyleSheet.create({
-   icone:{
+    icone: {
         alignItems: 'center',
         marginBottom: 20,
     },
-    txtJogador:{
+    txtJogador: {
         fontSize: 18
     }
-    
-  });
-  export default Icone;
+
+});
+export default Icone;
