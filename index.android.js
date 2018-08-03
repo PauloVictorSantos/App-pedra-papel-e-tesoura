@@ -14,8 +14,8 @@ import {
   Image
 } from 'react-native';
 
-import Topo from './src/component/Topo';
-import Icone from './src/component/Icone';
+import Topo from './src/component/topo.js';
+import Icone from './src/component/icone.js';
 
 export default class app3 extends Component {
   constructor(props) {
